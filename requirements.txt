@@ -1,0 +1,6 @@
+torch==2.10.0
+numpy==2.5.4
+scikit-learn==1.9.1
+opencv-python-headless==4.14.0.94
+matplotlib==3.11.2
+imageio-ffmpeg==0.6.0

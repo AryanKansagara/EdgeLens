@@ -1,0 +1,14 @@
+name: Vision benchmark checks
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -r requirements.txt
+      - run: sudo apt-get update && sudo apt-get install -y clang
+      - run: MPLCONFIGDIR=.mplconfig python -m unittest -v
+      - run: MPLCONFIGDIR=.mplconfig python vision.py --output artifacts

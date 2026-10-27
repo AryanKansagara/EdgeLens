@@ -1,0 +1,39 @@
+{
+  "dataset": "scikit-learn load_digits: 1797 real 8x8 handwritten-digit images",
+  "seed": 23,
+  "train_images": 1077,
+  "validation_images": 270,
+  "test_images": 450,
+  "epochs": 35,
+  "selected_epoch_by_validation": 23,
+  "best_validation_accuracy": 0.9666666666666667,
+  "pytorch_fp32_test_accuracy": 0.9622222222222222,
+  "int8_test_accuracy": 0.9622222222222222,
+  "fp32_int8_prediction_agreement": 1.0,
+  "classical_baselines_test_accuracy": {
+    "logistic_regression": 0.9666666666666667,
+    "pca_svm": 0.9888888888888889
+  },
+  "fp32_parameter_bytes": 68904,
+  "int8_parameter_and_scale_bytes": 18640,
+  "parameter_storage_reduction_percent": 72.94786949959364,
+  "quantized_model_file_bytes": 18672,
+  "cpp_numpy_max_logit_difference": 3.3424340823984267e-06,
+  "cpp_numpy_prediction_agreement": 1.0,
+  "cpp_batch_amortized_ms_per_image": 0.00561537111,
+  "cpu_platform": "macOS-26.5.1-arm64-arm-64bit",
+  "inference_device": "local CPU, not Android or an edge board",
+  "video": {
+    "frames": 120,
+    "unique_source_images": 30,
+    "constructed_clip_accuracy": 0.9666666666666667,
+    "fp32_int8_prediction_agreement": 1.0,
+    "warning": "120 repeated frames from 30 held-out still images; not independent natural video samples."
+  },
+  "limitations": [
+    "Small digit benchmark, not a state-of-the-art claim.",
+    "Weight-only INT8; activations/accumulation remain FP32.",
+    "Model storage is not process RSS or peak inference memory.",
+    "Latency is a local batch-amortized measurement, not mobile-device latency."
+  ]
+}
