@@ -24,6 +24,10 @@ the real-model inference path under AddressSanitizer and UndefinedBehaviorSaniti
 
 ## Dataset and evaluation design
 
+### CNN extension
+
+Run `python cnn_experiment.py --output artifacts` for a separate two-Conv2d-layer classifier with 20% dropout, AdamW weight decay and validation-loss checkpoint selection. The original MLP quantization/C++ flow below is unchanged; the CNN is **not** quantized or exported to the C++ runtime. The combined suite now has 27 tests. See [CNN report](docs/CNN_REPORT.md) and `results/cnn_metrics.json` for the single-seed clean/noisy image results and limitations. Both experiments use the existing digit split, so this exploratory extension is not a new untouched benchmark.
+
 Uses scikit-learn's bundled [load_digits](https://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_digits.html)
 dataset: 1,797 real 8×8 handwritten-digit images across ten classes. Original source:
 [UCI optical recognition of handwritten digits](https://archive.ics.uci.edu/dataset/80/optical+recognition+of+handwritten+digits).

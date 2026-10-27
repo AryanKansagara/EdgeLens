@@ -20,6 +20,9 @@ Relevant primary references:
 - [OpenCV documentation](https://docs.opencv.org/4.x/)
 - [FFmpeg documentation](https://ffmpeg.org/documentation.html)
 
+The CNN extension in `cnn_experiment.py` adds a two-convolution classifier on the
+same digit split; see `CNN_REPORT.md` for its separate results and limitations.
+
 Future work: a trained lightweight convolutional model on a larger, appropriately
 licensed image dataset; writer/source-disjoint evaluation; representative natural
 video; operator-level profiling; and actual target-device measurements using a
